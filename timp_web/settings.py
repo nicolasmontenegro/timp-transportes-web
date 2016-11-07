@@ -26,7 +26,7 @@ SECRET_KEY = '-4mlw%jjm5&b#-45zan7o7wn*(sjg(&t(8!ethll=9x^z9ag20'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["timp-transportes.herokuapp.com",]
+ALLOWED_HOSTS = ["timp-transportes.herokuapp.com","127.0.0.1",]
 
 
 # Application definition
@@ -125,8 +125,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,  "static"),
+]
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
