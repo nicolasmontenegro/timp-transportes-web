@@ -26,7 +26,7 @@ SECRET_KEY = '-4mlw%jjm5&b#-45zan7o7wn*(sjg(&t(8!ethll=9x^z9ag20'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["timp-transportes.herokuapp.com",]
 
 
 # Application definition
