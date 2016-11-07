@@ -1,0 +1,49 @@
+{% extends "base_site.html" %}
+{% load staticfiles %}
+
+{% block bodyContent %}
+<div class="ui inverted vertical masthead center aligned segment">
+
+	<div class="ui container">
+		<div class="ui large secondary inverted pointing menu">
+			<a class="toc item">
+				<i class="sidebar icon"></i>
+			</a>
+			<a class="item" href="/">Inicio</a>
+			<a class="item" href="nosotros">Nosotros</a>
+			<a class="item">Servicios</a>
+			<a class="item">Contacto</a>
+		</div>
+	</div>
+
+	<div class="ui text container">
+		<img class="ui fluid image" src="{% static 'img/logo timp white.svg' %}">
+		<div class="ui huge primary button">Contactenos <i class="right arrow icon"></i></div>
+	</div>
+
+</div>
+
+
+<div class="ui vertical stripe segment">
+<div class="ui middle aligned stackable grid container">
+	<div class="row">
+		<div class="eight wide column">
+			<h3 class="ui header">We Help Companies and Companions</h3>
+			<p>We can give your company superpowers to do things that they
+				never thought possible. Let us delight your customers and empower your 
+				needs...through pure data analytics.</p>
+				<h3 class="ui header">We Make Bananas That Can Dance</h3>
+				<p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+			</div>
+			<div class="six wide right floated column">
+				<img src="Homepage%20-%20Semantic_archivos/white-image.png" class="ui large bordered rounded image">
+			</div>
+		</div>
+		<div class="row">
+			<div class="center aligned column">
+				<a class="ui huge button">Check Them Out</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
