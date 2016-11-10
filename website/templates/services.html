@@ -32,7 +32,7 @@
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-	$("#carrou").glide({
+	$(".glide").glide({
         type: "carousel"
     });
 });
@@ -65,16 +65,16 @@
 	</div>
 	<div class="ui vertical vehicles segment">
 		<div class="ui equal width middle aligned stackable grid">	
-			<div class="center aligned row">
-				<div class="three wide column">
-					<h3 class="middle aligned">aplica a</h3>				
+			<div class="centered aligned row">
+				<div class="two wide column">
+					<h3>aplica a</h3>				
 				</div>
-				<div class="four wide column">
-					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/car.svg' %}">
 					<span>Autos</span>				
 				</div>
-				<div class="four wide column">
-					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/van.svg' %}">
 					<span>Van</span>				
 				</div>
 			</div>
@@ -83,7 +83,68 @@
 
 	<div class="ui middle aligned stackable grid container">
 		<div class="twelve wide column">
-			<h1>Viajes turísticos</h1>
+			<h1>Servicios Especiales</h1>
+			<p>Rutas a pedido en las Región V, VI y Metropolitana tanto individuales como flota.</p>
+		</div>
+		<div class="four wide right floated column">
+			<img src="{% static 'img/trvel_pin.jpg' %}" class="ui small circular image">
+		</div>
+
+		<div class="row">
+			<div class="glide">
+
+			    <div class="glide__arrows">
+			        <button class="glide__arrow prev" data-glide-dir="<">prev</button>
+			        <button class="glide__arrow next" data-glide-dir=">">next</button>
+			    </div>
+
+			    <div class="glide__wrapper">
+			        <div class="glide__track">
+						<div class="glide__slide" style="background-image: url('{% static 'img/carretera_chile.jpg' %}') ">
+							<h3 class="ui slideTitle">Viajes interurbanos</h3>
+						</div>
+						<div class="glide__slide" style="background-image: url('{% static 'img/DSC_2602.jpg' %}') ">
+							<h3 class="ui slideTitle">Matrimonios</h3>
+						</div>
+						<div class="glide__slide" style="background-image: url('{% static 'img/corporate_events.jpg' %}') ">
+							<h3 class="ui slideTitle">Fiestas empresas</h3>
+						</div>
+						<div class="glide__slide" style="background-image: url('{% static 'img/aaIMG_3692.jpg' %}') ">
+							<h3 class="ui slideTitle">Año nuevo y aniversarios</h3>
+						</div>
+					</div>
+			    </div>
+
+			    <div class="glide__bullets"></div>
+
+			</div>
+		</div>
+	</div>
+	<div class="ui vertical vehicles segment">
+		<div class="ui equal width middle aligned stackable grid">	
+			<div class="centered aligned row">
+				<div class="two wide column">
+					<h3>aplica a</h3>				
+				</div>
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/car.svg' %}">
+					<span>Autos</span>				
+				</div>
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/van.svg' %}">
+					<span>Van</span>				
+				</div>
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/flota.svg' %}">
+					<span>Flota</span>				
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui middle aligned stackable grid container">
+		<div class="twelve wide column">
+			<h1>Viajes Turísticos</h1>
 			<p>Cobertura a los principales destinos turísticos de las regiones V, VI y Metropolitana.</p>
 		</div>
 		<div class="four wide right floated column">
@@ -91,7 +152,7 @@
 		</div>
 
 		<div class="row">
-			<div id="carrou" class="glide">
+			<div class="glide">
 
 			    <div class="glide__arrows">
 			        <button class="glide__arrow prev" data-glide-dir="<">prev</button>
@@ -119,16 +180,16 @@
 	</div>
 	<div class="ui vertical vehicles segment">
 		<div class="ui equal width middle aligned stackable grid">	
-			<div class="center aligned row">
-				<div class="three wide column">
-					<h3 class="middle aligned">aplica a</h3>				
+			<div class="centered aligned row">
+				<div class="two wide column">
+					<h3>aplica a</h3>				
 				</div>
-				<div class="four wide column">
-					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/car.svg' %}">
 					<span>Autos</span>				
 				</div>
-				<div class="four wide column">
-					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/van.svg' %}">
 					<span>Van</span>				
 				</div>
 			</div>

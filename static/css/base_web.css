@@ -59,14 +59,6 @@
 .ui.vertical.stripe .horizontal.divider {
 	margin: 3em 0em;
 }
-/*vehicles*/
-.vehicles.segment .row {
-	background-color: green;
-	color: #FFFFFF;
-}
-/*.vehicles.stripe.segment h3 span{
-	color: white;
-}*/
 /*footer*/
 .footer.segment {
 	padding: 5em 0em;
