@@ -16,7 +16,6 @@
 	<script type="text/javascript" src="{% static 'Semantic-UI/semantic.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/base_web.js' %}"></script>
 
-	{% block headStyle %}{% endblock %}
 	{% block headScript %}{% endblock %}
 
 </head>
@@ -30,8 +29,8 @@
 			</a>
 			<a class="item" href="/">Inicio</a>
 			<a class="item" href="nosotros">Nosotros</a>
-			<a class="item">Servicios</a>
-			<a class="item">Contacto</a>
+			<a class="item" href="servicios">Servicios</a>
+			<a class="item" href="#contacto">Contacto</a>
 			<div class="right item">
 				<img class="ui mini image" src="{% static 'img/logo timp black.svg' %}">
 			</div>
@@ -42,8 +41,8 @@
 	<div class="ui vertical inverted sidebar menu left">
 		<a class="item" href="/">Inicio</a>
 		<a class="item" href="nosotros">Nosotros</a>
-		<a class="item">Servicios</a>
-		<a class="item">Contacto</a>
+		<a class="item" href="servicios">Servicios</a>
+		<a class="item" href="#contacto">Contacto</a>
 	</div>
 
 <!-- Page Contents -->
@@ -51,7 +50,7 @@
 
 	{% block bodyContent %}{% endblock %}
 	
-	<div class="ui inverted vertical footer segment">
+	<div class="ui inverted vertical footer segment" id="contacto">
 		<div class="ui container">
 			<div class="ui stackable inverted divided equal height stackable grid">
 				<div class="three wide column">

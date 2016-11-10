@@ -1,0 +1,137 @@
+{% extends "base_site.html" %}
+{% load staticfiles %}
+
+{% block headScript %}
+	<link rel="stylesheet" href="{% static 'Glide/css/glide.core.css' %}" >
+	<link rel="stylesheet" href="{% static 'Glide/css/glide.theme.css' %}" >
+	<script type="text/javascript" src="{% static 'Glide/glide.js' %}"></script>
+	<style type="text/css">
+	.glide__slide{
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 15em;
+	}
+	.ui.slideTitle{
+		color: white;
+		text-shadow:0px 0px 5px gray;
+		width: auto;
+		text-align: center;
+		margin-top: 1em;
+	}
+
+
+	</style>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+	$("#carrou").glide({
+        type: "carousel"
+    });
+});
+	</script>
+
+	
+{% endblock %}
+
+{% block bodyContent %}
+<div class="ui inverted vertical submasthead center aligned segment">
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Servicios
+      </h1>
+      <h2>Opciones para cada necesidad.</h2>
+    </div>
+</div>
+
+
+<div class="ui vertical stripe segment">  
+	
+	<div class="ui middle aligned stackable grid container">
+			<div class="twelve wide column">
+				<h1>Encargos</h1>
+				<p>Servicio de traslado dedicado para empresas para el transporte de cajas, paquetes y documentos en general.</p>
+			</div>
+			<div class="four wide right floated column">
+				<img src="{% static 'img/OBC7KA0.jpg' %}" class="ui small circular image">
+			</div>
+	</div>
+	<div class="ui vertical vehicles segment">
+		<div class="ui equal width middle aligned stackable grid">	
+			<div class="center aligned row">
+				<div class="three wide column">
+					<h3 class="middle aligned">aplica a</h3>				
+				</div>
+				<div class="four wide column">
+					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+					<span>Autos</span>				
+				</div>
+				<div class="four wide column">
+					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+					<span>Van</span>				
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ui middle aligned stackable grid container">
+		<div class="twelve wide column">
+			<h1>Viajes turísticos</h1>
+			<p>Cobertura a los principales destinos turísticos de las regiones 5°, 6° y Metropolitana.</p>
+		</div>
+		<div class="four wide right floated column">
+			<img src="{% static 'img/TA_109387_Vineyards.jpg' %}" class="ui small circular image">
+		</div>
+
+		<div class="row">
+			<div id="carrou" class="glide">
+
+			    <div class="glide__arrows">
+			        <button class="glide__arrow prev" data-glide-dir="<">prev</button>
+			        <button class="glide__arrow next" data-glide-dir=">">next</button>
+			    </div>
+
+			    <div class="glide__wrapper">
+			        <div class="glide__track">
+						<div class="glide__slide" style="background-image: url('{% static 'img/monticello.jpg' %}') ">
+							<h3 class="ui slideTitle">Casino Monticello</h3>
+						</div>
+						<div class="glide__slide" style="background-image: url('{% static 'img/Valparaiso_Port_and_cityscape.jpg' %}') ">
+							<h3 class="ui slideTitle">Valparaiso</h3>
+						</div>
+						<div class="glide__slide" style="background-image: url('{% static 'img/Valle_de_Casablanca_1.jpg' %}') ">
+							<h3 class="ui slideTitle">Valle de Casablanca</h3>
+						</div>
+					</div>
+			    </div>
+
+			    <div class="glide__bullets"></div>
+
+			</div>
+		</div>
+	</div>
+	<div class="ui vertical vehicles segment">
+		<div class="ui equal width middle aligned stackable grid">	
+			<div class="center aligned row">
+				<div class="three wide column">
+					<h3 class="middle aligned">aplica a</h3>				
+				</div>
+				<div class="four wide column">
+					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+					<span>Autos</span>				
+				</div>
+				<div class="four wide column">
+					<img class="ui middle aligned tiny image" src="/images/wireframe/square-image.png">
+					<span>Van</span>				
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+
+
+
+{% endblock %}

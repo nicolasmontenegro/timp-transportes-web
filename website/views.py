@@ -17,4 +17,9 @@ def home(request):
 def aboutUs(request):
 	templateObject["HeadTitle"]["section"] = "Nosotros"
 	templateObject["isHome"] = False
-	return render(request, 'aboutUs.html', templateObject)
+	return render(request, 'about_us.html', templateObject)
+
+def services(request):
+	templateObject["HeadTitle"]["section"] = "Servicios"
+	templateObject["isHome"] = False
+	return render(request, 'services.html', templateObject)
