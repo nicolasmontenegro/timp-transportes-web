@@ -15,27 +15,59 @@
 	}
 	.ui.slideTitle{
 		color: white;
-		text-shadow:0px 0px 5px gray;
+		text-shadow:0px 0px 5px black;
 		width: auto;
 		text-align: center;
 		margin-top: 1em;
 	}
-
 	/*vehicles*/
 	.vehicles.segment .row {
 	background-color: green;
 	color: #FFFFFF;
-}
-
-
+	}
 	</style>
-
 	<script type="text/javascript">
+	var jsonList= {	"precios":[
+		{"comuna": "ARRAYAN", "precio":25000},
+		{"comuna": "BUIN", "precio":27000},
+		{"comuna": "CALERA DE TANGO", "precio":26000},
+		{"comuna": "CERRILOS", "precio":18000},
+		{"comuna": "CERRO NAVIA", "precio":16000},
+		{"comuna": "CIUDAD SATELITE", "precio":19000},
+		{"comuna": "CIUDAD LOS VALLES", "precio":16000},
+		{"comuna": "COLINA", "precio":22000},
+		{"comuna": "CONCHALI", "precio":16000},
+		{"comuna": "CHICUREO", "precio":22000},
+		{"comuna": "EL BOSQUE", "precio":19000},
+		{"comuna": "ESTACION CENTRAL", "precio":16000},
+		{"comuna": "HUECHURABA", "precio":16000},
+		{"comuna": "INDEPENDENCIA", "precio":16000},
+		{"comuna": "ISLA DE MAIPO", "precio":24000},
+		{"comuna": "LA CISTERNA", "precio":18000},
+		{"comuna": "LA DEHESA", "precio":23000},
+		{"comuna": "LA FLORIDA", "precio":21000},
+		{"comuna": "LA GRANJA", "precio":18000},
+		{"comuna": "LA PINTANA", "precio":19000},
+		{"comuna": "LA REINA", "precio":22000},
+		{"comuna": "LAS CONDES", "precio":20000},
+		{"comuna": "LAS VIZCACHAS", "precio":26000},
+		{"comuna": "LO BARNECHEA", "precio":23000},
+		{"comuna": "LO ESPEJO", "precio":18000},
+		{"comuna": "LOMAS  LO AGUIRRE", "precio":16000},
+		{"comuna": "BATUCO", "precio":21000}]
+	};
 	$(document).ready(function() {
-	$(".glide").glide({
-        type: "carousel"
-    });
-});
+		$(".glide").glide({type: "carousel"});
+    	var listItems= "";
+		for (var i = 0; i < jsonList.precios.length; i++)
+			listItems+= "<div class=\"item\" data-value=\"" + i + "\">" + jsonList.precios[i].comuna + "</div>";
+		$("#comunas").html(listItems);
+		$('.ui.dropdown').dropdown({
+			onChange: function (val) {
+				$("#precio i").html("$" + jsonList.precios[parseInt(val)].precio);
+				}
+			});
+	});
 	</script>
 
 	
@@ -176,6 +208,50 @@
 			    <div class="glide__bullets"></div>
 
 			</div>
+		</div>
+	</div>
+	<div class="ui vertical vehicles segment">
+		<div class="ui equal width middle aligned stackable grid">	
+			<div class="centered aligned row">
+				<div class="two wide column">
+					<h3>aplica a</h3>				
+				</div>
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/car.svg' %}">
+					<span>Autos</span>				
+				</div>
+				<div class="three wide column">
+					<img class="ui middle aligned small image" src="{% static 'svg/van.svg' %}">
+					<span>Van</span>				
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="ui middle aligned stackable grid container">
+		<div class="twelve wide column">
+			<h1>Viajes a aeropuerto</h1>
+			<p>Transporte desde diversas comunas de Santiago a precios convenientes.</p>
+		</div>
+		<div class="four wide right floated column">
+			<img src="{% static 'img/aeropuerto_scl.jpg' %}" class="ui small circular image">
+		</div>
+
+		<div class="row">
+			<div class="ten wide column">
+				<div class="ui fluid search selection dropdown">
+					<input name="country" type="hidden">
+					<i class="dropdown icon"></i>
+					<div class="default text">Seleccione comuna</div>
+					<div class="menu" id="comunas">
+					</div>
+				</div>
+			</div>
+			<div class="six wide column">
+			<p id="precio">El precio se su viaje es: <i></i></p>
+			</div>
+
 		</div>
 	</div>
 	<div class="ui vertical vehicles segment">
