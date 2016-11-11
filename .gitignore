@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+#windows files
+Thumbs.db
+desktop.ini
