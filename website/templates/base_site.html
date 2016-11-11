@@ -25,14 +25,14 @@
 	<div class="ui top fixed menu {% if isHome %}transition hidden{% endif %}">
 		<div class="ui container">			
 			<a class="toc item">
-				<i class="sidebar icon"></i>
+				<i class="sidebar icon"></i>Menú
 			</a>
 			<a class="item" href="/">Inicio</a>
 			<a class="item" href="nosotros">Nosotros</a>
 			<a class="item" href="servicios">Servicios</a>
-			<a class="item" href="#contacto">Contacto</a>
+			<a class="item contacto">Contacto</a>
 			<div class="right item">
-				<img class="ui mini image" src="{% static 'svg/logo timp black.svg' %}">
+				<a href="/"><img class="ui mini image" src="{% static 'svg/logo timp black.svg' %}"></a>
 			</div>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 		<a class="item" href="/">Inicio</a>
 		<a class="item" href="nosotros">Nosotros</a>
 		<a class="item" href="servicios">Servicios</a>
-		<a class="item" href="#contacto">Contacto</a>
+		<a class="item contacto" >Contacto</a>
 	</div>
 
 <!-- Page Contents -->
@@ -50,32 +50,39 @@
 
 	{% block bodyContent %}{% endblock %}
 	
-	<div class="ui inverted vertical footer segment" id="contacto">
+	<div class="ui inverted vertical footer segment">
 		<div class="ui container">
 			<div class="ui stackable inverted divided equal height stackable grid">
-				<div class="two wide column">
-					<h4 class="ui inverted header">Servicios</h4>
-					<div class="ui inverted link list">
-						<a href="#" class="item">Banana Pre-Order</a>
-						<a href="#" class="item">DNA FAQ</a>
-						<a href="#" class="item">How To Access</a>
-						<a href="#" class="item">Favorite X-Men</a>
+				<div class="twelve wide column" id="contacto">
+					<h1 class="ui inverted header">Contacto</h1>
+					<p>Para brindar una mejor atención, haga su reserva con anticipación</p>
+					<div class="ui list">						
+						<div class="item">
+							<i class="mail icon"></i>
+							<div class="content">
+								<a href="mailto:pmvarelabravo@gmail.com">pmvarelabravo@gmail.com</a>
+							</div>
+						</div>
+						<div class="item">
+							<i class="mobile icon"></i>
+							<i class="whatsapp icon"></i>
+							<div class="content">
+								<a href="tel:+56998831153">9 9883 1153</a>
+							</div>
+						</div>
+						<div class="item">
+							<i class="call icon"></i>
+							<div class="content">
+								<a href="tel:+56223191005">2 2319 1005</a>
+								<small> lunes a viernes en horario de oficina</small>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="eight wide column">
-					<h4 class="ui inverted header">Información</h4>
-					<p>Para brindar una buena atención, haga su reserva con anticipación a los siguientes Canales</p>
-					<ul>
-						<li>Correo: pmvarelabravo@gmail.com </li>
-						<li>Celular: 9-98831153</li>
-						<li>Red fija: 23191005 Lunes a Viernes en Horario de Oficina </li>
-						<li>WhatsApp: 56998831153</li>
-					</ul>
-				</div>
-				<div class="three wide column">
+				<div class="four wide column">
 					<h4 class="ui inverted header">Timp Transportes</h4>
 					<img class="ui small image" src="{% static 'svg/logo timp white.svg' %}">
-					<p>Una marca de <i>Servicio de Transportes PyG Varela Sánchez Ltda</i>.</p>
+					<p>Una marca de<br><i>Servicio de Transportes PyG Varela Sánchez Ltda</i>.</p>
 				</div>
 			</div>
 		</div>

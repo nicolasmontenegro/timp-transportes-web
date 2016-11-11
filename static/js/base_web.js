@@ -13,5 +13,11 @@ $(document).ready(function() {
 	;
 
 	// create sidebar and attach to menu open
-	$('.ui.sidebar').sidebar('attach events', '.toc.item');
+	$('.ui.sidebar').sidebar('attach events', '.toc.item', 'overlay');
+	
+});
+$(document).on('click', ".contacto", function(e){
+	e.preventDefault();
+	$(".ui.sidebar").sidebar("hide");
+	$('html,body').animate({scrollTop: $('#contacto').offset().top * .98},'fast');
 });

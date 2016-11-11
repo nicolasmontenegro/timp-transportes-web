@@ -1,27 +1,92 @@
 {% extends "base_site.html" %}
 {% load staticfiles %}
 
+{% block headScript %}
+<style type="text/css">
+	.ui.vertical.stripe p {
+		font-size: 1.8em;
+	}
+
+	i.massive.icon{
+		font-size: 8em;
+	}
+
+	@media only screen and (max-width: 700px) {
+		i.massive.icon{
+			font-size: 2em;
+		}
+		.ui.vertical.stripe p {
+			font-size: 1.2em;
+		}
+	}
+	@media only screen and (min-width: 700px) and (max-width: 1000px) {
+		i.massive.icon{
+			font-size: 6em;
+		}
+		.ui.vertical.stripe p {
+			font-size: 1.6em;
+		}
+	}
+
+</style>
+{% endblock %}
+
 {% block bodyContent %}
+<div class="ui inverted vertical submasthead center aligned segment">
+	<div class="ui text container">
+		<h1 class="ui inverted header">Sobre Nosotros</h1>
+		<h2>Un servicio confiable y de calidad</h2>
+	</div>
+</div>
+
 <div class="ui vertical stripe segment">
-    <div class="ui middle aligned stackable grid container">
-      <div class="row">
-        <div class="eight wide column">
-          <h3 class="ui header">We Help Companies and Companions</h3>
-          <p>We can give your company superpowers to do things that they
-           never thought possible. Let us delight your customers and empower your 
-           needs...through pure data analytics.</p>
-           <h3 class="ui header">We Make Bananas That Can Dance</h3>
-           <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
-         </div>
-         <div class="six wide right floated column">
-          <img src="Homepage%20-%20Semantic_archivos/white-image.png" class="ui large bordered rounded image">
-        </div>
-      </div>
-      <div class="row">
-        <div class="center aligned column">
-          <a class="ui huge button">Check Them Out</a>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="ui middle aligned grid container">
+		<div class="centered aligned row">
+			<div class="four wide column">
+				<i class="massive circular inverted teal thumbs up icon"></i>
+			</div>
+			<div class="ten wide column">
+				<p>Somos una empresa de transporte de pasajeros que da servicios a <b>empresas y personas</b>, con trato confiable y personalizado.</p>
+			</div>
+		</div>
+
+		<div class="centered aligned row">
+			<div class="four wide column">
+				<i class="massive circular inverted teal checkmark box icon"></i>
+			</div>
+			<div class="ten wide column">
+				<p>Nuestra empresa se encuentra inscrita en el Ministerio de Transportes, con número de Folio 119.223.</p>
+			</div>
+		</div>
+
+		<div class="centered aligned row">
+			<div class="four wide column">
+				<i class="massive circular inverted teal users icon"></i>
+			</div>
+			<div class="ten wide column">
+				<p>Servicio de pasajeros en forma integral a través de Convenios con Empresas.</p>
+				<ul>
+					<li>Sistema de Vale Radio Taxi.</li>
+					<li>Facturación mensual.</li>
+					<li>Precios especiales y convenios.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="centered aligned row">
+			<div class="four wide column">
+				<i class="massive circular inverted teal checked calendar icon"></i>
+			</div>
+			<div class="ten wide column">
+				<p>Reservas con hasta 24 horas de anticipación.</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="center aligned column">
+				<a href="/servicios" class="ui huge button">Revisa nuestros servicios</a>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

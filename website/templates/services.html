@@ -22,12 +22,18 @@
 	}
 	/*vehicles*/
 	.vehicles.segment .row {
-	background-color: green;
-	color: #FFFFFF;
+		background-color: green;
+		color: #FFFFFF;
+	}
+	/*cost*/
+	.inlinePrecio{
+		display: inline;
 	}
 	</style>
 	<script type="text/javascript">
-	var jsonList= {	"precios":[
+	var jsonList= {	
+		"estacionamiento":2500,
+		"precios":[
 		{"comuna": "ARRAYAN", "precio":25000},
 		{"comuna": "BUIN", "precio":27000},
 		{"comuna": "CALERA DE TANGO", "precio":26000},
@@ -54,7 +60,35 @@
 		{"comuna": "LO BARNECHEA", "precio":23000},
 		{"comuna": "LO ESPEJO", "precio":18000},
 		{"comuna": "LOMAS  LO AGUIRRE", "precio":16000},
-		{"comuna": "BATUCO", "precio":21000}]
+		{"comuna": "BATUCO", "precio":21000},
+		{"comuna": "LO PRADO", "precio":16000},
+		{"comuna": "MACUL", "precio":18000},
+		{"comuna": "MAIPU", "precio":16000},
+		{"comuna": "NOS", "precio":23000},
+		{"comuna": "ÑUÑOA", "precio":20000},
+		{"comuna": "PEDRO AGUIRRE CERDA", "precio":17000},
+		{"comuna": "PEÑALOLEN", "precio":22000},
+		{"comuna": "PEÑAFLOR", "precio":25000},
+		{"comuna": "PADRE HURTADO", "precio":21000},
+		{"comuna": "PIRQUE", "precio":26000},
+		{"comuna": "PROVIDENCIA", "precio":18000},
+		{"comuna": "PUDAHUEL", "precio":16000},
+		{"comuna": "PUENTE ALTO", "precio":23000},
+		{"comuna": "QUINTA NORMAL", "precio":15000},
+		{"comuna": "QUILICURA", "precio":16000},
+		{"comuna":"RECOLETA", "precio":16000 },
+		{"comuna":"LAMPA", "precio": 21000 },
+		{"comuna":"RENCA", "precio": 16000 },
+		{"comuna":"SAN BERNARDO", "precio": 22000 },
+		{"comuna":"SAN CARLOS APOQUINDO", "precio":23000 },
+		{"comuna":"SAN JOAQUIN", "precio":18000 },
+		{"comuna":"SAN JOSE DE MAIPO", "precio": 33000 },
+		{"comuna":"SAN MIGUEL", "precio":18000 },
+		{"comuna":"SAN RAMON", "precio":18000 },
+		{"comuna":"SANTIAGO", "precio":16000 },
+		{"comuna":"TALAGANTE", "precio":26000 },
+		{"comuna":"VITACURA", "precio":21000 },
+		]
 	};
 	$(document).ready(function() {
 		$(".glide").glide({type: "carousel"});
@@ -64,7 +98,9 @@
 		$("#comunas").html(listItems);
 		$('.ui.dropdown').dropdown({
 			onChange: function (val) {
-				$("#precio i").html("$" + jsonList.precios[parseInt(val)].precio);
+				var precioEstacionamiento = jsonList.precios[parseInt(val)].precio + jsonList.estacionamiento;
+				$("#precio #normal").html(jsonList.precios[parseInt(val)].precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }));
+				$("#precio #estacionamiento").html(precioEstacionamiento.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }));
 				}
 			});
 	});
@@ -79,7 +115,7 @@
       <h1 class="ui inverted header">
         Servicios
       </h1>
-      <h2>Opciones para cada necesidad.</h2>
+      <h2>Opciones para cada necesidad</h2>
     </div>
 </div>
 
@@ -96,9 +132,9 @@
 			</div>
 	</div>
 	<div class="ui vertical vehicles segment">
-		<div class="ui equal width middle aligned stackable grid">	
+		<div class="ui equal width middle aligned grid">	
 			<div class="centered aligned row">
-				<div class="two wide column">
+				<div class="four wide column">
 					<h3>aplica a</h3>				
 				</div>
 				<div class="three wide column">
@@ -153,9 +189,9 @@
 		</div>
 	</div>
 	<div class="ui vertical vehicles segment">
-		<div class="ui equal width middle aligned stackable grid">	
+		<div class="ui equal width middle aligned grid">	
 			<div class="centered aligned row">
-				<div class="two wide column">
+				<div class="four wide column">
 					<h3>aplica a</h3>				
 				</div>
 				<div class="three wide column">
@@ -211,9 +247,9 @@
 		</div>
 	</div>
 	<div class="ui vertical vehicles segment">
-		<div class="ui equal width middle aligned stackable grid">	
+		<div class="ui equal width middle aligned grid">	
 			<div class="centered aligned row">
-				<div class="two wide column">
+				<div class="four wide column">
 					<h3>aplica a</h3>				
 				</div>
 				<div class="three wide column">
@@ -238,8 +274,9 @@
 			<img src="{% static 'img/aeropuerto_scl.jpg' %}" class="ui small circular image">
 		</div>
 
-		<div class="row">
-			<div class="ten wide column">
+		<div class="centered aligned row">
+			<div class="eight wide column">
+				<small>Escriba o seleccione comuna</small>
 				<div class="ui fluid search selection dropdown">
 					<input name="country" type="hidden">
 					<i class="dropdown icon"></i>
@@ -248,16 +285,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="six wide column">
-			<p id="precio">El precio se su viaje es: <i></i></p>
+			<div class="four wide column" id="precio">
+				<p class="inlinePrecio"><i>El precio de su viaje es </i></p><h2 class="inlinePrecio" id="normal">$---</h2>				
+				<p><i>+ estacionamiento </i><b id="estacionamiento">$---</b></p>
 			</div>
+			<p>Si su comuna no está en la lista, contáctenos.</p>
 
 		</div>
 	</div>
 	<div class="ui vertical vehicles segment">
-		<div class="ui equal width middle aligned stackable grid">	
+		<div class="ui equal width middle aligned grid">	
 			<div class="centered aligned row">
-				<div class="two wide column">
+				<div class="four wide column">
 					<h3>aplica a</h3>				
 				</div>
 				<div class="three wide column">
